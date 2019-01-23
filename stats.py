@@ -65,6 +65,14 @@ else:
 # Get range
 range = list[n-1] - list[0]
 
+# Sample Variance (S2) - TESTING
+x = 0
+for num in list:
+    x  += (list[num] - mean) * (list[num] - mean)
+y = n - 1
+s2 = x/y
+#
+
 # Close the file
 file.close()
 
@@ -73,3 +81,4 @@ print (mean)
 print (median)
 print (mode)
 print (range)
+print (s2)
