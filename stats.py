@@ -1,8 +1,13 @@
-# Open text file containing values
-file = open("set.txt", "r")
+# Statistical variables
+list   = []
+n      = 0
+sum    = 0
+mean   = 0
+median = 0
+mode   = 0
 
-# Create list
-list = []
+# Open text file containing values
+file  = open("set.txt", "r")
 
 # Insert values into set
 for line in file:
@@ -13,25 +18,20 @@ for line in file:
 list.sort()
 
 # Get sum of set values
-sum = 0
 for num in list:
-    sum+=num
+    sum += num
 
 # Get mean
 n    = len(list)
 mean = sum/n
 
 # Get median
-left   = 0
-right  = 0
-median = 0
-
 if (n % 2) is not 0:
-    i = (n + 1)/2 - 1
-    i = round(i)
+    i      = (n + 1)/2 - 1
+    i      = round(i)
     median = list[i]
 else:
-    i = (n + 1)/2 - 1
+    i      = (n + 1)/2 - 1
     left   = int(i)
     right  = round(i)
     median = (list[left] + list[right])/2
@@ -56,8 +56,15 @@ for num in set:
     distinct.append(num)
 
 # Get mode
-mode = 0
 if freq.count(max) > 1:
     mode = 0
 else:
     mode = distinct[max]
+
+# Close the file
+file.close()
+
+print (sum)
+print (mean)
+print (median)
+print (mode)
