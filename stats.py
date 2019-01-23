@@ -5,6 +5,7 @@ sum    = 0
 mean   = 0
 median = 0
 mode   = 0
+range  = 0
 
 # Open text file containing values
 file  = open("set.txt", "r")
@@ -57,9 +58,12 @@ for num in set:
 
 # Get mode
 if freq.count(max) > 1:
-    mode = 0
+    mode = None
 else:
     mode = distinct[max]
+
+# Get range
+range = list[n-1] - list[0]
 
 # Close the file
 file.close()
@@ -68,3 +72,4 @@ print (sum)
 print (mean)
 print (median)
 print (mode)
+print (range)
