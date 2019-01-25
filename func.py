@@ -14,7 +14,7 @@ def getSum(list):
 
 def getMean(list, sum, n):
     mean        = sum/n
-    return mean;
+    return round(mean, 3);
 
 def getMedian(list, n):
     median      = 0
@@ -53,13 +53,22 @@ def getRange(list, n):
 def getSampleVariance(list, mean, n):
     temp        = []
     for num in list:
-        x       = (num - mean)
-        y       = x * x
-        temp.append(y)
+        x       = (num - mean) ** (2.0)
+        temp.append(x)
     numerator   = getSum(temp)
     denominator = n - 1
-    return (numerator/denominator);
+    return round((numerator/denominator), 3);
 
 def getStandardDeviation(s2):
-    s = s2 ** (.5)
-    return s;
+    s           = s2 ** (.5)
+    return round(s, 3);
+
+def getCoefficientOfVariation(s, mean):
+    return round(((s/mean) * 100), 3);
+
+def getZScore(list, mean, s):
+    zScores     = []
+    for num in list:
+        x       = (num-mean)/s
+        zScores.append(round(x, 3))
+    return zScores;

@@ -10,6 +10,8 @@ mode   = 0
 range  = 0
 s2     = 0
 s      = 0
+cv     = 0
+z      = 0
 
 # Open text file containing values
 file  = open("set.txt", "r")
@@ -26,12 +28,14 @@ mode   = func.getMode(dataSet)
 range  = func.getRange(dataSet, n)
 s2     = func.getSampleVariance(dataSet, mean, n)
 s      = func.getStandardDeviation(s2)
+cv     = func.getCoefficientOfVariation(s, mean)
+z      = func.getZScore(dataSet, mean, s)
 
 # Print statistics
 print ("\nDataset: ", dataSet)
 print ("Number of elements: ", n)
 print ("\nResults: ")
-print ("*********")
+print ("********")
 print ("Sum = ", sum)
 print ("Mean = ", mean)
 print ("Median = ", median)
@@ -39,6 +43,8 @@ print ("Mode = ", mode)
 print ("Range = ", range)
 print ("Sample Variance = ", s2)
 print ("Standard Deviation = ", s)
+print ("Coefficient of Variation = ", cv, "%")
+print ("ZScores = ", z)
 
 # Close the file
 file.close()
