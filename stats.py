@@ -24,6 +24,8 @@ mean   = func.getMean(dataSet, sum, n)
 median = func.getMedian(dataSet, n)
 mode   = func.getMode(dataSet)
 range  = func.getRange(dataSet, n)
+s2     = func.getSampleVariance(dataSet, mean, n)
+s      = func.getStandardDeviation(s2)
 
 # Print statistics
 print (dataSet)
@@ -33,6 +35,8 @@ print (mean)
 print (median)
 print (mode)
 print (range)
+print (s2)
+print (s)
 
 # Close the file
 file.close()
