@@ -33,17 +33,18 @@ def getMode(list):
     sets        = set(list)
     freq        = []
     mode        = 0
+    count       = 0
+    tracker     = 0
     for num in sets:
-        x       = list.count(num)
-        freq.append(x)
-    most        = max(freq)
-    distinct    = []
-    for num in sets:
-        distinct.append(num)
+        if list.count(num) > count:
+            count = list.count(num)
+            tracker = num
+        freq.append(list.count(num))
+    most = max(freq)
     if freq.count(most) > 1:
         mode    = None
     else:
-        mode    = distinct[most]
+        mode    = tracker
     return mode;
 
 def getRange(list, n):
