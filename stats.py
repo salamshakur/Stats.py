@@ -46,5 +46,8 @@ print ("Standard Deviation = ", s)
 print ("Coefficient of Variation = ", cv, "%")
 print ("ZScores = ", z)
 
+# Pause program
+input ("\nPress ENTER to exit...")
+
 # Close the file
 file.close()
