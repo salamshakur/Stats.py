@@ -10,11 +10,11 @@ def getSum(list):
     sum             = 0
     for num in list:
         sum         = sum + num
-    return sum;
+    return sum
 
 def getMean(list, sum, n):
     mean            = sum/n
-    return round(mean, 3);
+    return round(mean, 3)
 
 def getMedian(list, n):
     median          = 0
@@ -27,7 +27,7 @@ def getMedian(list, n):
         left        = int(i)
         right       = round(i)
         median      = (list[left] + list[right])/2
-    return median;
+    return median
 
 def getMode(list):
     sets            = set(list)
@@ -45,11 +45,11 @@ def getMode(list):
         mode        = None
     else:
         mode        = tracker
-    return mode;
+    return mode
 
 def getRange(list, n):
     range           = list[n-1] - list[0]
-    return range;
+    return range
 
 def getSampleVariance(list, mean, n):
     temp            = []
@@ -58,18 +58,33 @@ def getSampleVariance(list, mean, n):
         temp.append(x)
     numerator       = getSum(temp)
     denominator     = n - 1
-    return round((numerator/denominator), 3);
+    return round((numerator/denominator), 3)
 
 def getStandardDeviation(s2):
     s               = s2 ** (.5)
-    return round(s, 3);
+    return round(s, 3)
 
 def getCoefficientOfVariation(s, mean):
-    return round(((s/mean) * 100), 3);
+    return round(((s/mean) * 100), 3)
 
 def getZScore(list, mean, s):
     zScores         = []
     for num in list:
         x           = (num-mean)/s
         zScores.append(round(x, 3))
-    return zScores;
+    return zScores
+
+#def getSinterval(list, n, mean, s):
+#    print ("s is now ", s)
+#    low  = mean - s
+#    print (low)
+#    high = mean + s
+#    print (high)
+#    count = 0
+#    print (count)
+#    for num in list:
+#        if low <= num or num >= high:
+#            count = count + 1
+#    print (count)
+#    percent = round(((count/n) * 100), 3)
+#    return percent
